@@ -2,6 +2,27 @@
 
 A comprehensive simulation framework for analyzing and comparing control strategies for the descent phase of reusable launch vehicles (RLVs). This project models six-degrees-of-freedom (6-DOF) dynamics and evaluates RCS-only vs. Hybrid (RCS + Aerodynamic) control approaches.
 
+## 🚨 Important: Improved Version Available
+
+**Two simulation versions are provided:**
+
+1. **`sim.ipynb`** - Original version (for reference)
+   - ⚠️ Contains physics errors and performance issues
+   - See [IMPROVEMENTS.md](IMPROVEMENTS.md) for detailed issue list
+
+2. **`sim_corrected.ipynb`** - ✅ **Recommended**
+   - Corrected physics model (exponential atmosphere)
+   - Complete 6-DOF dynamics
+   - Performance optimized (100× faster)
+   - Actually reaches ground level
+   - See [IMPROVEMENTS.md](IMPROVEMENTS.md) for all fixes
+
+📊 **Additional Documentation:**
+- [IMPROVEMENTS.md](IMPROVEMENTS.md) - Detailed list of bugs fixed and improvements made
+- [DIAGRAMS.md](DIAGRAMS.md) - Comprehensive system diagrams and architecture visualizations
+
+---
+
 ## Table of Contents
 - [Overview](#overview)
 - [System Architecture](#system-architecture)
@@ -142,7 +163,10 @@ cd Space-System_term-paper
 # Install dependencies
 pip install -r requirements.txt
 
-# Run the simulation
+# Run the CORRECTED simulation (recommended)
+jupyter notebook sim_corrected.ipynb
+
+# Or run the original version (for comparison)
 jupyter notebook sim.ipynb
 ```
 
@@ -150,9 +174,15 @@ jupyter notebook sim.ipynb
 
 ### Running the Simulation
 
-1. Open `sim.ipynb` in Jupyter Notebook
+**Recommended (Corrected Version):**
+1. Open `sim_corrected.ipynb` in Jupyter Notebook
 2. Execute cells sequentially to run the simulation
-3. View real-time plots of altitude, fuel usage, and torque dynamics
+3. View comprehensive plots of all state variables and performance metrics
+
+**Original Version (For Comparison):**
+1. Open `sim.ipynb` in Jupyter Notebook
+2. Note: This version has known issues (see [IMPROVEMENTS.md](IMPROVEMENTS.md))
+3. Useful for comparing before/after improvements
 
 ### Simulation Flow
 
